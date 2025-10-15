@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마켓컬리 클론 코딩</title>
+    <!-- Swiper.js CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+    <!-- ==================== 헤더 시작 ==================== -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-top">
+                <ul class="user-menu">
+                    <li><a href="#signup">회원가입</a></li>
+                    <li><a href="#login">로그인</a></li>
+                    <li><a href="#cs">고객센터</a></li>
+                </ul>
+            </div>
+            <div class="header-middle">
+                <div class="logo-area">
+                    <a href="/"><img src="assets/kurly_logo.png" alt="마켓컬리 로고"></a>
+                </div>
+                <div class="header-menu">
+                    <button type="button" class="menu-item active" id="market-kurly">마켓컬리</button>
+                    <button type="button" class="menu-item" id="beauty-kurly">뷰티컬리</button>
+                </div>
+                <div class="search-area">
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                    <button class="search-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#5F0080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21L16.65 16.65" stroke="#5F0080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+                <div class="icon-area">
+                    <a href="#map"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                    <a href="#wishlist"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                    <a href="#cart"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 6h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 10a4 4 0 0 1-8 0" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="category-menu-container">
+                    <div class="category-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18M3 6h18M3 18h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        <span>카테고리</span>
+                    </div>
+                    <div class="category-wrapper">
+                        <ul class="category-list">
+                            <li><a href="#"><span>🌿</span> 채소</a></li>
+                            <li><a href="#"><span>🍓</span> 과일·견과·쌀</a></li>
+                            <li><a href="#"><span>🐟</span> 수산·해산·건어물</a></li>
+                            <li><a href="#"><span>🥩</span> 정육·계란</a></li>
+                            <li><a href="#"><span>🍳</span> 국·반찬·메인요리</a></li>
+                            <li><a href="#"><span>🥗</span> 샐러드·간편식</a></li>
+                            <li><a href="#"><span>🍝</span> 면·양념·오일</a></li>
+                            <li><a href="#"><span>☕</span> 생수·음료·우유·커피</a></li>
+                            <li><a href="#"><span>🥨</span> 간식·과자·떡</a></li>
+                            <li><a href="#"><span>🍞</span> 베이커리·치즈·델리</a></li>
+                            <li><a href="#"><span>💪</span> 건강식품</a></li>
+                            <li><a href="#"><span>🍷</span> 와인</a></li>
+                            <li><a href="#"><span>🥃</span> 전통주</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#">신상품</a></li>
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">알뜰쇼핑</a></li>
+                        <li><a href="#">특가/혜택</a></li>
+                    </ul>
+                </nav>
+                <a href="#delivery-info" class="delivery-info">
+                    <span>샛별・하루</span> 배송안내
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- ==================== 헤더 끝 ==================== -->
+
+
+    <!-- ==================== 메인 콘텐츠 시작 ==================== -->
+    <main class="main-content">
+        <section class="main-banner">
+            <div class="swiper main-banner-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#"><img src="assets/slide1.png" alt="메인 배너 1"></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="assets/slide2.jpg" alt="메인 배너 2"></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="assets/slide3.jpg" alt="메인 배너 3"></a></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <div id="product-sections-wrapper">
+            <!-- 모든 섹션은 이제 JS를 통해 이곳에 동적으로 생성됩니다. -->
+        </div>
+        <div class="loader" style="display: none;">
+            <p>새로운 상품을 불러오는 중...</p>
+        </div>
+    </main>
+    <!-- ==================== 메인 콘텐츠 끝 ==================== -->
+
+    <!-- ==================== 푸터 시작 ==================== -->
+    <footer id="main-footer" style="display: none;">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="customer-center">
+                    <h2>고객행복센터</h2>
+                    <strong class="phone-number">1644-1107 <span>월~토요일 오전 7시 - 오후 6시</span></strong>
+                    <div class="contact-channels">
+                        <div class="contact-box"><button>카카오톡 문의</button><div class="contact-info"><p>월~토요일 | 오전 7시 - 오후 6시</p><p>일/공휴일 | 오전 7시 - 오후 1시</p></div></div>
+                        <div class="contact-box"><button>1:1 문의</button><div class="contact-info"><p>365일</p><p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p></div></div>
+                        <div class="contact-box"><button>대량주문 문의</button><div class="contact-info"><p>월~금요일 | 오전 9시 - 오후 6시</p><p>점심시간 | 낮 12시 - 오후 1시</p></div></div>
+                    </div>
+                    <p class="email-info">비회원 문의 : <a href="mailto:help@kurlycorp.com">help@kurlycorp.com</a></p>
+                </div>
+                <div class="company-info">
+                    <ul class="corp-links">
+                        <li><a href="#">컬리소개</a></li><li><a href="#">컬리소개영상</a></li><li><a href="#">인재채용</a></li><li><a href="#">이용약관</a></li><li><a href="#">개인정보처리방침</a></li><li><a href="#">이용안내</a></li>
+                    </ul>
+                    <address class="corp-details">
+                        법인명 (상호) : 주식회사 컬리 <span>|</span> 사업자등록번호 : 261-81-23567 <a href="#">사업자정보 확인</a><br>
+                        통신판매업 : 제 2018-서울강남-01646 호 <span>|</span> 개인정보보호책임자 : 이원준<br>
+                        주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동) <span>|</span> 대표이사 : 김슬아<br>
+                        입점문의 : <a href="#">입점문의하기</a> <span>|</span> 제휴문의 : <a href="mailto:business@kurlycorp.com">business@kurlycorp.com</a><br>
+                        채용문의 : <a href="mailto:recruit@kurlycorp.com">recruit@kurlycorp.com</a><br>
+                        팩스: 070 - 7500 - 6098
+                    </address>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="컬리 네이버블로그"><img src="https://res.kurly.com/pc/ico/1810/ico_blog.png" alt=""></a></li>
+                        <li><a href="#" aria-label="컬리 페이스북"><img src="https://res.kurly.com/pc/ico/1810/ico_facebook.png" alt=""></a></li>
+                        <li><a href="#" aria-label="컬리 인스타그램"><img src="https://res.kurly.com/pc/ico/1810/ico_instagram.png" alt=""></a></li>
+                        <li><a href="#" aria-label="컬리 네이버포스트"><img src="https://res.kurly.com/pc/ico/1810/ico_naverpost.png" alt=""></a></li>
+                        <li><a href="#" aria-label="컬리 유튜브"><img src="https://res.kurly.com/pc/ico/1810/ico_youtube.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <a href="#" class="cert-mark"><img src="assets/isms.png" alt="isms 로고"><p>[인증범위] 마켓컬리 쇼핑몰 서비스 개발 · 운영<br>[유효기간] 2022.01.19 ~ 2025.01.18</p></a>
+                <a href="#" class="cert-mark"><img src="assets/ePRIVACY PLUS.jpg" alt="eprivacy plus 로고"><p>개인정보보호 우수 웹사이트 ·<br>개인정보처리시스템 인증 (ePRIVACY PLUS)</p></a>
+                <a href="#" class="cert-mark"><img src="assets/uri.jpg" alt="payments 로고"><p>고객님의 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한<br>토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.</p></a>
+            </div>
+            <div class="footer-bottom">
+                <p>마켓컬리에서 판매되는 상품 중에는 마켓컬리에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.</p>
+                <p>마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서 통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.</p>
+                <p>© KURLY CORP. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ==================== 푸터 끝 ==================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>
+
