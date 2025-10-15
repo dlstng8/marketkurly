@@ -1,0 +1,635 @@
+/* ==================== 기본 스타일 초기화 ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* CSS 변수 (테마 컬러) */
+:root {
+    --main-purple: #5F0080;
+    --light-gray: #ccc;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+
+/* ==================== 헤더 스타일 ==================== */
+.main-header {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.header-container {
+    width: 1050px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.user-menu {
+    display: flex;
+    font-size: 12px;
+}
+
+.user-menu li {
+    position: relative;
+    padding: 0 10px;
+}
+
+.user-menu li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background-color: var(--border-color);
+}
+
+.user-menu a:hover {
+    color: var(--main-purple);
+}
+
+.header-middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo-area img {
+    height: 42px;
+    width: auto;
+}
+
+.header-menu {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.menu-item {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    color: var(--light-gray);
+    transition: color 0.2s ease-in-out;
+}
+
+.menu-item.active {
+    color: var(--main-purple);
+}
+
+.menu-item:hover {
+    color: var(--main-purple);
+}
+
+.search-area {
+    position: relative;
+    width: 350px;
+}
+
+.search-area input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--main-purple);
+    border-radius: 6px;
+    padding: 0 45px 0 15px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-area input::placeholder {
+    color: var(--light-gray);
+}
+
+.search-area .search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon-area {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.icon-area a:hover svg path {
+    stroke: var(--main-purple);
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+/* ▼▼▼ 카테고리 메뉴 관련 스타일 수정/추가 ▼▼▼ */
+.category-menu-container {
+    position: relative; /* 자식 요소인 .category-wrapper의 위치 기준 */
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.category-btn:hover, .category-btn.active {
+    color: var(--main-purple);
+}
+
+.category-btn:hover svg path, .category-btn.active svg path {
+    stroke: var(--main-purple);
+}
+
+.category-wrapper {
+    display: none;
+    position: absolute;
+    top: 100%; /* 부모(.category-menu-container) 바로 아래에 위치 */
+    left: 0;   /* 부모의 왼쪽에 맞춤 */
+    margin-top: 10px; /* 버튼과 메뉴 사이의 간격 */
+    width: 240px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px; /* 둥근 모서리 추가 */
+    padding: 10px 0;
+    z-index: 110; /* 다른 요소들 위에 오도록 설정 */
+}
+
+.category-list li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.category-list li a:hover {
+    background-color: #f7f7f7;
+    color: var(--main-purple);
+    font-weight: 600;
+}
+
+.category-list li a span {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+/* ▲▲▲ 카테고리 메뉴 관련 스타일 끝 ▲▲▲ */
+
+
+.main-nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.main-nav a:hover {
+    color: var(--main-purple);
+    text-decoration: underline;
+}
+
+.delivery-info {
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.delivery-info span {
+    color: var(--main-purple);
+    font-weight: 600;
+}
+
+.delivery-info:hover {
+    background-color: #f7f7f7;
+}
+
+/* ==================== 메인 콘텐츠 스타일 ==================== */
+.main-content {
+    width: 100%;
+}
+
+.main-banner {
+    width: 100%;
+    height: 380px;
+}
+
+.main-banner-swiper {
+    height: 100%;
+}
+
+.main-banner-swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-section {
+    padding: 80px 0;
+}
+
+.section-container {
+    width: 1050px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-swiper {
+    padding: 0 10px;
+    margin: 0 -10px;
+}
+
+.product-item {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+
+.product-item.is-visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.section-container > .swiper-button-prev,
+.section-container > .swiper-button-next {
+    position: absolute;
+    top: 45%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.section-container > .swiper-button-prev {
+    left: -22px;
+}
+
+.section-container > .swiper-button-next {
+    right: -22px;
+}
+
+.swiper-button-disabled {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+.section-container > .swiper-button-prev::after,
+.section-container > .swiper-button-next::after {
+    font-size: 16px;
+    font-weight: 800;
+    color: #333;
+}
+
+.product-img {
+    margin-bottom: 10px;
+}
+
+.product-img img {
+    width: 100%;
+    display: block;
+}
+
+.product-info {
+    padding: 0 5px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    height: 44.8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-price {
+    margin-bottom: 4px;
+}
+
+.discount-rate {
+    color: #FA622F;
+    font-size: 16px;
+    font-weight: 800;
+    margin-right: 8px;
+}
+
+.final-price {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    height: 36px;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--main-purple);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #f7f7f7;
+}
+
+.add-to-cart-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.ranking-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.ranking-tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #666;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.ranking-tab.active, .ranking-tab:hover {
+    background-color: var(--main-purple);
+    color: #fff;
+    font-weight: 600;
+}
+
+.ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 18px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.ranking-item .rank-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--main-purple);
+    font-style: italic;
+    width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.ranking-item .product-img-wrapper {
+    width: 100px;
+    height: 128px;
+    flex-shrink: 0;
+}
+
+.ranking-item .product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ranking-item .product-info {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.ranking-item .product-name {
+    height: auto;
+    -webkit-line-clamp: 3;
+}
+
+.loader {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 16px;
+    color: #888;
+}
+
+.banner-section {
+    padding: 40px 0;
+}
+
+.banner-section img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ==================== 푸터 스타일 ==================== */
+#main-footer {
+    padding: 50px 0;
+    border-top: 1px solid #f7f7f7;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+#main-footer.visible {
+    opacity: 1;
+}
+
+.footer-container {
+    width: 1050px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.customer-center h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.customer-center .phone-number {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.customer-center .phone-number span {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+.contact-channels {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-box button {
+    width: 140px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.5;
+}
+
+.email-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+}
+.email-info a {
+    color: var(--main-purple);
+}
+
+.company-info .corp-links {
+    display: flex;
+    gap: 14px;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.company-info .corp-links a:hover {
+    text-decoration: underline;
+}
+
+.company-info .corp-details {
+    font-style: normal;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.8;
+}
+
+.corp-details span {
+    margin: 0 5px;
+}
+
+.corp-details a {
+    color: var(--main-purple);
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-middle {
+    padding: 30px 0;
+    border-bottom: 1px solid #f7f7f7;
+    display: flex;
+    gap: 10px;
+}
+
+.cert-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    color: #999;
+}
+
+.cert-mark img {
+    height: 34px;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+}
+
+.footer-bottom p {
+    line-height: 1.6;
+}
+
